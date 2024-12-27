@@ -1,0 +1,15 @@
+@font-face {
+  font-family: avenir;
+  src: url(../assets/AvenirNextLTPro-Regular.otf);
+}
+.avenir {
+  font-family: avenir;
+}
+.background {
+  background-image: url(../assets/tet.jpg);
+}
+.gta5 {
+  background-image: url(../assets/112.png);
+  background-position: center;
+  background-size: cover;
+}
