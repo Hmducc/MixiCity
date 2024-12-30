@@ -82,10 +82,8 @@ class Petal {
     this.h = 20 + Math.random() * 10;
     this.opacity = this.w / 40;
     this.flip = Math.random();
-
-    // Increased speed for faster movement
-    this.xSpeed = 1 + Math.random() * 2; // Previously 0.5 + Math.random() * 1
-    this.ySpeed = 0.8 + Math.random() * 1.5; // Previously 0.3 + Math.random() * 0.7
+    this.xSpeed = 0.5 + Math.random() * 1; // Consistent horizontal speed
+    this.ySpeed = 0.3 + Math.random() * 0.7; // Consistent vertical speed
     this.flipSpeed = Math.random() * 0.03;
   }
 
@@ -93,11 +91,14 @@ class Petal {
     if (this.y > this.canvas.height || this.x > this.canvas.width) {
       this.x = -this.petalImg.width;
       this.y = Math.random() * this.canvas.height * 2 - this.canvas.height;
-      this.xSpeed = 1 + Math.random() * 2; // Reset speed on reposition
-      this.ySpeed = 0.8 + Math.random() * 1.5; // Reset speed on reposition
+      this.xSpeed = 0.5 + Math.random() * 1; // Maintain consistent speed on reset
+      this.ySpeed = 0.3 + Math.random() * 0.7; // Maintain consistent speed on reset
       this.flip = Math.random();
     }
+
     ctx.globalAlpha = this.opacity;
+
+    // Draw petal image
     ctx.drawImage(
       this.petalImg,
       this.x,
@@ -105,11 +106,24 @@ class Petal {
       this.w * (0.6 + Math.abs(Math.cos(this.flip)) / 3),
       this.h * (0.8 + Math.abs(Math.sin(this.flip)) / 5)
     );
+
+    // Apply pink tint using overlay
+    ctx.globalCompositeOperation = "source-atop"; // Tint only the petal image
+    ctx.fillStyle = "rgba(255, 105, 180, 0.3)"; // Pink color with transparency
+    ctx.fillRect(
+      this.x,
+      this.y,
+      this.w * (0.6 + Math.abs(Math.cos(this.flip)) / 3),
+      this.h * (0.8 + Math.abs(Math.sin(this.flip)) / 5)
+    );
+
+    // Reset composite operation
+    ctx.globalCompositeOperation = "source-over";
   }
 
   animate(ctx: CanvasRenderingContext2D) {
-    this.x += this.xSpeed; // Faster horizontal movement
-    this.y += this.ySpeed; // Faster vertical movement
+    this.x += this.xSpeed; // Consistent horizontal speed
+    this.y += this.ySpeed; // Consistent vertical speed
     this.flip += this.flipSpeed;
     this.draw(ctx);
   }
