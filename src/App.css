@@ -13,3 +13,24 @@
   background-position: center;
   background-size: cover;
 }
+@font-face {
+  font-family: avenir2;
+  src: url(../assets/AvenirNextLTPro-Regular2.otf);
+}
+.avenir2 {
+  font-family: avenir2;
+}
+@font-face {
+  font-family: test;
+  src: url(../assets/test.otf);
+}
+.test {
+  font-family: test;
+}
+@font-face {
+  font-family: raleway;
+  src: url(../assets/Raleway-Regular.ttf);
+}
+.raleway {
+  font-family: raleway;
+}
