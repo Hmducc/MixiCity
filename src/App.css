@@ -34,3 +34,8 @@
 .raleway {
   font-family: raleway;
 }
+.dragon {
+  background-image: url(../assets/112.png);
+  background-position: center;
+  background-size: cover;
+}
