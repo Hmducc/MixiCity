@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
+import { FaGamepad, FaPalette, FaUser } from "react-icons/fa";
+import { Tooltip } from "react-tooltip";
+import close from "../assets/close.svg";
 import shutdown from "../assets/down.svg";
+import hagg from "../assets/hagg.jpg";
+import info from "../assets/info.svg";
 import logo from "../assets/logo-mixicity.png";
+import map from "../assets/map.svg";
 import people from "../assets/people.svg";
+import ps4 from "../assets/ps4.svg";
 import settings from "../assets/settings.svg";
 import speaker from "../assets/speaker.svg";
 import "./App.css";
 import FallingBlossom from "./FallingBlossom";
-import { FaUser, FaPalette, FaGamepad } from "react-icons/fa";
-import close from "../assets/close.svg";
-import info from "../assets/info.svg";
-import { Tooltip } from "react-tooltip";
-import hagg from "../assets/hagg.jpg";
 import FadingImageSlideshow from "./Images";
-import ps4 from "../assets/ps4.svg";
-import map from "../assets/map.svg";
 
 const Homepage: React.FC = () => {
   const [isCityPartBig, setIsCityPartBig] = useState(true);
@@ -412,9 +412,10 @@ const Homepage: React.FC = () => {
                 </div>
               </div>
               <div
-                className="h-[50px] bg-[#ae1e25] border border-[#e2b573] text-white text-center flex items-center justify-center rounded-lg shadow-md cursor-pointer hover:bg-[#750f16] transition-colors duration-300"
+                className="h-[50px] bg-[#ae1e25] border  border-[#e2b573] text-white text-center flex items-center justify-center rounded-lg shadow-md cursor-pointer hover:bg-[#750f16] transition-colors duration-300"
                 onClick={handleSwitch}
               >
+                <img src={logo} className="w-[40px] h-[20px]"></img>
                 <p className="text-lg font-semibold raleway text-[#e2b573]">
                   MixiCity Sự Kiện
                 </p>
@@ -486,6 +487,7 @@ const Homepage: React.FC = () => {
                 className="h-[50px] bg-[#ae1e25] border border-[#e2b573] text-white text-center flex items-center justify-center rounded-lg shadow-md cursor-pointer hover:bg-[#750f16] transition-colors duration-300"
                 onClick={handleSwitch}
               >
+                <img src={logo} className="w-[40px] h-[20px]"></img>
                 <p className="text-lg font-semibold raleway text-[#e2b573]">
                   MixiCity Season 3
                 </p>
